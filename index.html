@@ -2,52 +2,180 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Игры от OSMSVA</title>
+  <meta name="description" content="Скачивай бесплатные 2D-игры от OSMSVA на itch.io и поддержи разработку.">
   <style>
-    body {
-      background-color: #1e1e1e;
-      color: #f0f0f0;
-      font-family: 'Segoe UI', sans-serif;
-      text-align: center;
-      padding: 40px;
-    }
-    h1 {
-      color: #ffcc00;
-      font-size: 36px;
-    }
-    p {
-      font-size: 18px;
-      margin-bottom: 30px;
-    }
-    ul {
-      list-style: none;
+    /* Сброс */
+    * {
+      margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
-    li {
-      margin: 15px 0;
+
+    /* Переменные цвета */
+    :root {
+      --bg: #1e1e1e;
+      --fg: #f0f0f0;
+      --accent: #ff6600;
+      --accent-hover: #e65c00;
+      --highlight: #ffcc00;
+      --font: 'Segoe UI', Arial, sans-serif;
     }
-    a.game-link {
-      background-color: #ff6600;
-      color: white;
-      padding: 12px 24px;
+
+    body {
+      background-color: var(--bg);
+      color: var(--fg);
+      font-family: var(--font);
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header, footer {
+      text-align: center;
+      padding: 20px;
+    }
+
+    header h1 {
+      color: var(--highlight);
+      font-size: 2.5rem;
+    }
+
+    main {
+      flex: 1;
+      width: 90%;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+
+    /* Секция игр */
+    #games {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .game-card {
+      background: #2a2a2a;
+      border-radius: 8px;
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .game-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .game-card h2 {
+      background: var(--accent);
+      color: #fff;
+      padding: 12px;
+      font-size: 1.2rem;
+    }
+
+    .game-card p {
+      padding: 12px;
+      font-size: 0.95rem;
+    }
+
+    .game-card a {
+      display: inline-block;
+      margin: 12px;
+      padding: 10px 20px;
+      background: var(--highlight);
+      color: var(--bg);
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    /* Зоны рекламы */
+    .ad-banner {
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    /* Секция донатов */
+    #donate {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    #donate a {
+      background-color: var(--accent);
+      color: #fff;
+      padding: 14px 28px;
       text-decoration: none;
       border-radius: 8px;
-      font-weight: bold;
+      font-size: 1rem;
       transition: background-color 0.3s;
     }
-    a.game-link:hover {
-      background-color: #e65c00;
+
+    #donate a:hover {
+      background-color: var(--accent-hover);
+    }
+
+    footer p {
+      font-size: 0.85rem;
+      color: #888;
     }
   </style>
 </head>
 <body>
-  <h1>Игры от OSMSVA тут!</h1>
-  <p>Добро пожаловать! Здесь ты можешь скачать мои игры и поддержать разработку.</p>
 
-  <ul>
-    <li><a class="game-link" href="https://osmanskiysvatofor.itch.io/osmsvacrystalsmatch-3inarow" target="_blank">Game 1 — «OSMSVA Crystals»</a></li>
-    <li><a class="game-link" href="https://osmanskiysvatofor.itch.io/time-of-labyrinth-13" target="_blank">Game 2 — «Time of Labyrinth 1.3»</a></li>
-    <li><a class="game-link" href="https://osmanskiysvatofor.itch.io/horror-math" target="_blank">Game 3 — «Horror Math»</a></li>
-  </ul>
+  <header>
+    <h1>Игры от OSMSVA</h1>
+    <p>Три бесплатные 2D-проекта на itch.io — скачивай и поддержи разработчика.</p>
+  </header>
+
+  <main>
+
+    <!-- Секция с играми -->
+    <section id="games">
+      <div class="game-card">
+        <h2>OSMSVA Crystals</h2>
+        <p>Match-3 головоломка с яркой пиксельной графикой.</p>
+        <a href="https://osmanskiysvatofor.itch.io/osmsvacrystalsmatch-3inarow" target="_blank">Скачать</a>
+      </div>
+      <div class="game-card">
+        <h2>Time of Labyrinth 1.3</h2>
+        <p>Мини-ладдер платформер с случайно генерируемыми уровнями.</p>
+        <a href="https://osmanskiysvatofor.itch.io/time-of-labyrinth-13" target="_blank">Скачать</a>
+      </div>
+      <div class="game-card">
+        <h2>Horror Math</h2>
+        <p>Атмосферный хоррор-квиз, где решения — это выживание.</p>
+        <a href="https://osmanskiysvatofor.itch.io/horror-math" target="_blank">Скачать</a>
+      </div>
+    </section>
+
+    <!-- Верхний рекламный баннер -->
+    <div class="ad-banner" id="ad-top">
+      <!-- PROP_ADS_TOP: вставьте сюда код от PropellerAds -->
+    </div>
+
+    <!-- Секция поддержки -->
+    <section id="donate">
+      <p>Если тебе нравятся мои игры, поддержи дальнейшую разработку:</p>
+      <a href="https://boosty.to/legolend" target="_blank">Поддержать на Boosty</a>
+    </section>
+
+    <!-- Нижний рекламный баннер -->
+    <div class="ad-banner" id="ad-bottom">
+      <!-- PROP_ADS_BOTTOM: вставьте сюда код от PropellerAds -->
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© 2025 OSMSVA. Все права защищены.</p>
+  </footer>
+
 </body>
 </html>
+
